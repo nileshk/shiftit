@@ -23,6 +23,17 @@
 
 #define HotKeyModifers @"Modifiers"
 #define HotKeyCodes @"Key Code"
+
+#define KEYCODE_9 25
+#define KEYCODE_8 28
+#define KEYCODE_7 26
+#define KEYCODE_6 22
+#define KEYCODE_5 23
+#define KEYCODE_4 21
+#define KEYCODE_3 20
+#define KEYCODE_2 19
+#define KEYCODE_1 18
+
 @interface Preferences : NSObject {
     hKController * _hKeyController;
 	NSMutableDictionary * _userDefaultsValuesDict;

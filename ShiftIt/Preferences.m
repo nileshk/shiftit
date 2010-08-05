@@ -59,6 +59,30 @@ OSStatus winSizer(EventHandlerCallRef nextHandler,EventRef theEvent,void *userDa
 		case 11:
 			[(WindowSizer*)userData percent90:NULL];
 			break;
+		case 12:
+			[(WindowSizer*)userData percent80:NULL];
+			break;
+		case 13:
+			[(WindowSizer*)userData percent70:NULL];
+			break;
+		case 14:
+			[(WindowSizer*)userData percent60:NULL];
+			break;
+		case 15:
+			[(WindowSizer*)userData percent50:NULL];
+			break;
+		case 16:
+			[(WindowSizer*)userData percent40:NULL];
+			break;
+		case 17:
+			[(WindowSizer*)userData percent30:NULL];
+			break;
+		case 18:
+			[(WindowSizer*)userData percent20:NULL];
+			break;
+		case 19:
+			[(WindowSizer*)userData percent10:NULL];
+			break;
 		default:
 			break;
 	}	
@@ -140,9 +164,49 @@ OSStatus winSizer(EventHandlerCallRef nextHandler,EventRef theEvent,void *userDa
     [_userDefaultsValuesDict setObject:center forKey:@"center"];
 
     NSDictionary * percent90 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
-							 [NSNumber numberWithUnsignedInt:25],HotKeyCodes,
+							 [NSNumber numberWithUnsignedInt:KEYCODE_9],HotKeyCodes,
 							 nil];
     [_userDefaultsValuesDict setObject:percent90 forKey:@"percent90"];    
+	
+    NSDictionary * percent80 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_8],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent80 forKey:@"percent80"];    
+	
+    NSDictionary * percent70 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_7],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent70 forKey:@"percent70"];    
+	
+    NSDictionary * percent60 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_6],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent60 forKey:@"percent60"];    
+	
+    NSDictionary * percent50 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_5],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent50 forKey:@"percent50"];    
+	
+    NSDictionary * percent40 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_4],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent40 forKey:@"percent40"];    
+	
+    NSDictionary * percent30 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_3],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent30 forKey:@"percent30"];    
+	
+    NSDictionary * percent20 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_2],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent20 forKey:@"percent20"];    
+	
+    NSDictionary * percent10 = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)],HotKeyModifers,
+								[NSNumber numberWithUnsignedInt:KEYCODE_1],HotKeyCodes,
+								nil];
+    [_userDefaultsValuesDict setObject:percent10 forKey:@"percent10"];    
 	
 	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:1 keyCode:123 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
 	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:2 keyCode:124 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
@@ -154,7 +218,15 @@ OSStatus winSizer(EventHandlerCallRef nextHandler,EventRef theEvent,void *userDa
 	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:8 keyCode:124 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask+NSControlKeyMask)]]];
 	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:9 keyCode:8 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
 	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:10 keyCode:3 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
-	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:11 keyCode:25 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:11 keyCode:KEYCODE_9 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:12 keyCode:KEYCODE_8 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:13 keyCode:KEYCODE_7 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:14 keyCode:KEYCODE_6 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:15 keyCode:KEYCODE_5 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:16 keyCode:KEYCODE_4 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:17 keyCode:KEYCODE_3 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:18 keyCode:KEYCODE_2 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
+	[_hKeyController registerHotKey:[[SIHotKey alloc]initWithIdentifier:19 keyCode:KEYCODE_1 modCombo:[NSNumber numberWithUnsignedInt:(NSCommandKeyMask+NSAlternateKeyMask)]]];
 	
     [_userDefaultsValuesDict setObject:[NSNumber numberWithBool:YES] forKey:@"shiftItstartLogin"];
     [_userDefaultsValuesDict setObject:[NSNumber numberWithBool:YES] forKey:@"shiftItshowMenu"];

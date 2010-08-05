@@ -43,5 +43,14 @@
 -(IBAction)fullScreen:(id)sender;
 -(IBAction)shiftToCenter:(id)sender;
 -(IBAction)percent90:(id)sender;
+-(IBAction)percent80:(id)sender;
+-(IBAction)percent70:(id)sender;
+-(IBAction)percent60:(id)sender;
+-(IBAction)percent50:(id)sender;
+-(IBAction)percent40:(id)sender;
+-(IBAction)percent30:(id)sender;
+-(IBAction)percent20:(id)sender;
+-(IBAction)percent10:(id)sender;
+-(void)resizeToPercent:(int)percent;
 
 @end

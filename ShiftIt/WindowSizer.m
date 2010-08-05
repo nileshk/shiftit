@@ -395,8 +395,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Percent actions
 
--(IBAction)percent90:(id)sender{
-    NSLog(@"Shifting To 90%");
+-(void)resizeToPercent:(int)percent{
+	NSLog(@"Shifting To Percent");
 	if([self getWindowParameters]){
         [self getVisibleScreenParams];
         CFTypeRef _position;
@@ -406,8 +406,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		_windowPosition.y = ((_screenVisiblePosition.x ==0)? _menuBarHeight:0);
 		_position = (CFTypeRef)(AXValueCreate(kAXValueCGPointType, (const void *)&_windowPosition));
 		
-        _windowSize.width = (_screenVisibleSize.width * 9 / 10);
-        _windowSize.height = (_screenVisibleSize.height * 9 / 10);
+        _windowSize.width = (_screenVisibleSize.width * percent / 100);
+        _windowSize.height = (_screenVisibleSize.height * percent / 100);
         _size = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, (const void *)&_windowSize));					
         
 		if(AXUIElementSetAttributeValue((AXUIElementRef)_focusedWindow,(CFStringRef)NSAccessibilityPositionAttribute,(CFTypeRef*)_position) != kAXErrorSuccess){
@@ -417,8 +417,36 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			NSLog(@"Size cannot be modified");
 		}
     }
-    NSLog(@"Shifted To 90%");
+    NSLog(@"Shifted To Percent");
     _focusedWindow = NULL;	
+}
+
+-(IBAction)percent90:(id)sender{
+	[self resizeToPercent:90];
+}
+-(IBAction)percent80:(id)sender{
+	[self resizeToPercent:80];
+}
+-(IBAction)percent70:(id)sender{
+	[self resizeToPercent:70];
+}
+-(IBAction)percent60:(id)sender{
+	[self resizeToPercent:60];
+}
+-(IBAction)percent50:(id)sender{
+	[self resizeToPercent:50];
+}
+-(IBAction)percent40:(id)sender{
+	[self resizeToPercent:40];
+}
+-(IBAction)percent30:(id)sender{
+	[self resizeToPercent:30];
+}
+-(IBAction)percent20:(id)sender{
+	[self resizeToPercent:20];
+}
+-(IBAction)percent10:(id)sender{
+	[self resizeToPercent:10];
 }
 
 -(WindowSizer *)init{
