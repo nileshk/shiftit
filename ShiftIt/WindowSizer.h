@@ -42,5 +42,6 @@
 -(IBAction)shiftToBottomRight:(id)sender;
 -(IBAction)fullScreen:(id)sender;
 -(IBAction)shiftToCenter:(id)sender;
+-(IBAction)percent90:(id)sender;
 
 @end
