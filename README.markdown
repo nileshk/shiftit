@@ -21,3 +21,5 @@ Ideas of new features to add:
 * Move windows to different monitors
 * Configuration of shortcut keys.  This will likely not be user-friendly at first (e.g. reading in a file with keycodes).  It may also allow disabling of actions that aren't used.
 * Easy keyboard shortcut for unminimizing windows
+* Move windows to corners or side of screen without resizing
+* Ability to resize windows to percentages for width or height only
