@@ -1,4 +1,4 @@
-# Fork of "shiftit" - Mac OS X Window Manager #
+# Fork of "shiftit" - Mac OS X Window Management Utility #
 
 ## Origin ##
 
