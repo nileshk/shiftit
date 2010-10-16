@@ -395,14 +395,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Percent actions
 
--(void)resizeToPercent:(int)percent{
+-(void)resizeToPercent:(int)percent resizeWidth:(BOOL)resizeWidth resizeHeight:(BOOL)resizeHeight{
 	NSLog(@"Shifting To Percent");
 	if([self getWindowParameters]){
         [self getVisibleScreenParams];
         CFTypeRef _size;
 
-        _windowSize.width = (_screenVisibleSize.width * percent / 100);
-        _windowSize.height = (_screenVisibleSize.height * percent / 100);
+		if(resizeWidth) {
+			_windowSize.width = (_screenVisibleSize.width * percent / 100);
+		}
+		if(resizeHeight) {
+			_windowSize.height = (_screenVisibleSize.height * percent / 100);
+		}
         _size = (CFTypeRef)(AXValueCreate(kAXValueCGSizeType, (const void *)&_windowSize));					
 
 		if(AXUIElementSetAttributeValue((AXUIElementRef)_focusedWindow,(CFStringRef)NSAccessibilitySizeAttribute,(CFTypeRef*)_size) != kAXErrorSuccess){
@@ -413,32 +417,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     _focusedWindow = NULL;	
 }
 
+-(void)resizeHeightAndWidthToPercent:(int)percent{
+	[self resizeToPercent:percent resizeWidth:YES resizeHeight:YES];
+}
+
+-(void)resizeWidthToPercent:(int)percent{
+	[self resizeToPercent:percent resizeWidth:YES resizeHeight:NO];
+}
+
+-(void)resizeHeightToPercent:(int)percent{
+	[self resizeToPercent:percent resizeWidth:NO resizeHeight:YES];
+}
+
+
 -(IBAction)percent90:(id)sender{
-	[self resizeToPercent:90];
+	[self resizeHeightAndWidthToPercent:90];
 }
 -(IBAction)percent80:(id)sender{
-	[self resizeToPercent:80];
+	[self resizeHeightAndWidthToPercent:80];
 }
 -(IBAction)percent70:(id)sender{
-	[self resizeToPercent:70];
+	[self resizeHeightAndWidthToPercent:70];
 }
 -(IBAction)percent60:(id)sender{
-	[self resizeToPercent:60];
+	[self resizeHeightAndWidthToPercent:60];
 }
 -(IBAction)percent50:(id)sender{
-	[self resizeToPercent:50];
+	[self resizeWidthToPercent:70];
 }
 -(IBAction)percent40:(id)sender{
-	[self resizeToPercent:40];
+	[self resizeWidthToPercent:60];
 }
 -(IBAction)percent30:(id)sender{
-	[self resizeToPercent:30];
+	[self resizeWidthToPercent:50];
 }
 -(IBAction)percent20:(id)sender{
-	[self resizeToPercent:20];
+	[self resizeWidthToPercent:40];
 }
 -(IBAction)percent10:(id)sender{
-	[self resizeToPercent:10];
+	[self resizeWidthToPercent:30];
 }
 
 -(WindowSizer *)init{

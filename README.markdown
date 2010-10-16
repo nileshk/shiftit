@@ -14,7 +14,7 @@ This project was forked in order to customize how it works and add new functiona
 
 Features that have been added:
 
-* Resize windows to a percentage (multiples of 10).  To resize the current window to a specific percentage, you can press Command-Option-*n*, where the percentage is *n* * 10% (keys 1-9 can be used).  For example, to resize a window to a size that is 60% of the screen, you would press a keyboard shortcut like Command-Option-6.  Percentages are also accessible from the menu.
+* Resize windows to a percentage (multiples of 10).  To resize the current window to a specific percentage, you can press Command-Option-*n*, where the percentage is *n* * 10% (keys 6-9 can be used).  For example, to resize a window to a size that is 60% of the screen, you would press a keyboard shortcut like Command-Option-6.  Percentages are also accessible from the menu.  When using keys 1-5, only width is adjusted by percentage, using 30%-70% respectively.
 
 Ideas of new features to add:
 

@@ -51,6 +51,5 @@
 -(IBAction)percent30:(id)sender;
 -(IBAction)percent20:(id)sender;
 -(IBAction)percent10:(id)sender;
--(void)resizeToPercent:(int)percent;
 
 @end
